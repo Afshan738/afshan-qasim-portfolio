@@ -1,5 +1,5 @@
 import React from 'react';
-import './hero.css'; 
+import './Hero.css'; 
 const profileImageUrl = 'https://res.cloudinary.com/dyi2x7iiu/image/upload/v1755249721/img.720Z_qd9rpz.png';
 
 function Hero() {
