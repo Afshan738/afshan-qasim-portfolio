@@ -8,7 +8,7 @@ function Services() {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-1jrzu97zs-afshan738s-projects.vercel.app/api/services');
+        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/services');
         if (!response.ok) {
           throw new Error('Services data could not be fetched.');
         }

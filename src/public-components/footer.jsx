@@ -12,7 +12,7 @@ function Footer() {
   useEffect(() => {
     const fetchSocials = async () => {
       try {
-        const response = await fetch('hhttps://portfolio-backend-1jrzu97zs-afshan738s-projects.vercel.app/api/sitecontent');
+        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/sitecontent');
         if (!response.ok) return;
         const data = await response.json();
         const content = Array.isArray(data) ? data[0] : data;

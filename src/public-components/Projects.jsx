@@ -10,7 +10,7 @@ function Projects() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-1jrzu97zs-afshan738s-projects.vercel.app/api/projects');
+        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/projects');
         if (!response.ok) {
           throw new Error('Projects data could not be fetched.');
         }

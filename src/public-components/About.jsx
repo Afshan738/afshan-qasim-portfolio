@@ -7,7 +7,7 @@ const About = () => {
 
 
 useEffect(() => {
-    fetch("https://portfolio-backend-1jrzu97zs-afshan738s-projects.vercel.app/api/sitecontent")
+    fetch("https://portfolio-backend-two-olive.vercel.app/api/sitecontent")
         .then((response) => response.json())
         .then((data) => {
             if (data) {

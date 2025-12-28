@@ -10,7 +10,7 @@ function Skills() {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-1jrzu97zs-afshan738s-projects.vercel.app/api/skills');
+        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/skills');
         if (!response.ok) {
           throw new Error('Skills data could not be fetched.');
         }

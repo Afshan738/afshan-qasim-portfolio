@@ -18,7 +18,7 @@ function ContactMessageManagement() {
     }
 
     try {
-      const response = await fetch('https://portfolio-backend-1jrzu97zs-afshan738s-projects.vercel.app/api/contactmessages', {
+      const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/contactmessages', {
         headers: {
           'Authorization': `Afshan ${token}`, 
         },
@@ -50,7 +50,7 @@ function ContactMessageManagement() {
     if (!token) return setFeedback("Error: You are not logged in.");
 
     try {
-      const response = await fetch(`https://portfolio-backend-1jrzu97zs-afshan738s-projects.vercel.app/api/contactmessages/${messageId}`, {
+      const response = await fetch(`https://portfolio-backend-two-olive.vercel.app/api/contactmessages/${messageId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Afshan ${token}` }, 
       });

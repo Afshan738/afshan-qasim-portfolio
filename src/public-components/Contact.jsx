@@ -20,7 +20,7 @@ function Contact() {
     setMessage('');
 
     try {
-      const response = await fetch('https://portfolio-backend-1jrzu97zs-afshan738s-projects.vercel.app/api/contactmessages', {
+      const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/contactmessages', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

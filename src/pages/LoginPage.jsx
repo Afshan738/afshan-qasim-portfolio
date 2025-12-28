@@ -16,7 +16,7 @@ function LoginPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://portfolio-backend-1jrzu97zs-afshan738s-projects.vercel.app/api/admin/login', {
+      const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),

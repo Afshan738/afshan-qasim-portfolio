@@ -9,7 +9,7 @@ function Education() {
   useEffect(() => {
     const fetchEducation = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-1jrzu97zs-afshan738s-projects.vercel.app/api/education');
+        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/education');
         if (!response.ok) {
           throw new Error('Education data could not be fetched.');
         }

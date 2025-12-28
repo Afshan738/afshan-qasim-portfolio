@@ -10,7 +10,7 @@ function Certificates() {
   useEffect(() => {
     const fetchCertificates = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-1jrzu97zs-afshan738s-projects.vercel.app/api/certificates');
+        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/certificates');
         if (!response.ok) {
           throw new Error('Certificates data could not be fetched.');
         }
