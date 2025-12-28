@@ -1,0 +1,14 @@
+.tagline-section {
+  padding: 8rem 2rem;
+  background-color: black;
+  text-align: center;
+}
+
+.tagline-text {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  color: #ffffff;
+  max-width: 800px;
+  margin: 0 auto;
+}

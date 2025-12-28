@@ -1,0 +1,141 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 70px;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(13, 13, 13, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+.title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 20px;
+}
+
+.Links {
+  display: flex;
+  gap: 2rem;
+}
+
+.Links li {
+  list-style: none;
+}
+
+.Links li a {
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  transition: color 0.2s;
+}
+
+.Links li a:hover {
+  color: white;
+}
+
+.loginbtn {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.loginbtn .btn {
+  color: #38bdf8;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-right: 40px;
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: white;
+  z-index: 101;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 100;
+}
+
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
+.mobile-nav li {
+  list-style: none;
+}
+
+.mobile-nav li a,
+.mobile-nav .btn {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.mobile-nav li a:hover,
+.mobile-nav .btn:hover {
+  color: white;
+}
+.close-menu {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+}
+@media (max-width: 1024px) {
+  .header .Links,
+  .header .loginbtn {
+    display: none;
+  }
+  .header .burger-menu {
+    display: block;
+    margin-right: 23px;
+  }
+}
+@media (max-width: 800px) {
+  .header .burger-menu {
+    display: block;
+    margin-right: 35px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    padding: 0 1rem;
+  }
+  .title {
+    font-size: 1.25rem;
+  }
+  .header .burger-menu {
+    display: block;
+    margin-right: 32px;
+  }
+}

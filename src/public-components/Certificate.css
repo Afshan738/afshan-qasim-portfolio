@@ -1,0 +1,114 @@
+.certificates-section {
+  padding: 5rem 2rem;
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
+
+.certificates-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.certificates-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 4rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.certificates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.certificate-item {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.certificate-item:hover {
+  background-color: #2a2a2a;
+}
+
+.certificate-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.certificate-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: #ffffff;
+}
+
+.issuing-org {
+  font-size: 1rem;
+  color: #cccccc;
+  margin: 0;
+}
+
+.view-link {
+  font-weight: 600;
+  color: #38bdf8;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 2px solid #38bdf8;
+  border-radius: 50px;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.view-link:hover {
+  background-color: #38bdf8;
+  color: #0d0d0d;
+}
+
+.loading-message,
+.error-message {
+  font-size: 1.2rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .certificates-section {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificates-section {
+    padding: 3rem 1rem;
+  }
+
+  .certificates-title {
+    font-size: 2.25rem;
+  }
+  .certificate-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .certificate-title {
+    font-size: 1.1rem;
+  }
+
+  .issuing-org {
+    font-size: 0.9rem;
+  }
+
+  .view-link {
+    margin-top: 1rem;
+    align-self: flex-start;
+  }
+}
