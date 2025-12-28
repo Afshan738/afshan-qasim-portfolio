@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion'; 
-import './skills.css';
+import './Skills.css';
 
 function Skills() {
   const [skills, setSkills] = useState([]);
