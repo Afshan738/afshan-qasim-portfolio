@@ -1,3 +1,9 @@
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
 .header {
   position: fixed;
   top: 0;
@@ -68,10 +74,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background-color: rgba(13, 13, 13, 0.95);
+
+  background-color: rgba(13, 13, 13, 0.98);
   backdrop-filter: blur(10px);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,7 +87,11 @@
   gap: 2rem;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
-  z-index: 100;
+  z-index: 9999;
+  overflow: hidden;
+}
+.mobile-nav.open {
+  transform: translateX(0);
 }
 
 .mobile-nav.open {
