@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion'; 
 import './Project.css'; 
-
+import { API_URL } from '../config';
 function Projects() {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -10,7 +10,7 @@ function Projects() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/projects');
+        const response = await fetch(`${ API_URL }/api/projects`);
         if (!response.ok) {
           throw new Error('Projects data could not be fetched.');
         }

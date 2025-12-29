@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
-
+import { API_URL } from '../config';
 function EducationManagement() {
   const [educations, setEducations] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +27,7 @@ function EducationManagement() {
   const fetchEducation = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/education');
+      const response = await fetch(`${ API_URL }/api/education`);
       if (!response.ok) throw new Error('Failed to fetch education history');
       const data = await response.json();
       setEducations(data);
@@ -49,7 +49,7 @@ function EducationManagement() {
     if (!token) return setMessage("Error: You are not logged in.");
 
     const isUpdating = !!formData.id;
-    const url = isUpdating ? `https://portfolio-backend-two-olive.vercel.app/api/education/${formData.id}` : 'https://portfolio-backend-two-olive.vercel.app/api/education';
+    const url = isUpdating ? `${ API_URL }/api/education/${formData.id}` : `${ API_URL }/api/education`;
     const method = isUpdating ? 'PUT' : 'POST';
     const bodyData = { ...formData };
     if (bodyData.startDate) bodyData.startDate = new Date(bodyData.startDate).toISOString();
@@ -84,7 +84,7 @@ function EducationManagement() {
     if (!token) return setMessage("Error: You are not logged in.");
 
     try {
-      const response = await fetch(`https://portfolio-backend-two-olive.vercel.app/api/education/${educationId}`, {
+      const response = await fetch(`${ API_URL }/api/education/${educationId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` },
       });

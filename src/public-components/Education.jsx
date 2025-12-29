@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Education.css'; 
-
+import { API_URL } from '../config';
 function Education() {
   const [educationHistory, setEducationHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -9,7 +9,7 @@ function Education() {
   useEffect(() => {
     const fetchEducation = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/education');
+        const response = await fetch(`${ API_URL }/api/education`);
         if (!response.ok) {
           throw new Error('Education data could not be fetched.');
         }

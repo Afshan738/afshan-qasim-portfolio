@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
-
+import { API_URL } from '../config';
 function SkillManagement() {
   const [skills, setSkills] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +15,7 @@ function SkillManagement() {
   const fetchSkills = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/skills');
+      const response = await fetch(`${ API_URL }/api/skills`);
       if (!response.ok) throw new Error('Failed to fetch skills');
       const data = await response.json();
       setSkills(data);
@@ -46,7 +46,7 @@ function SkillManagement() {
     if (!token) return setMessage("Error: You are not logged in.");
 
     const isUpdating = !!formData.id;
-    const url = isUpdating ? `https://portfolio-backend-two-olive.vercel.app/api/skills/${formData.id}` : 'https://portfolio-backend-two-olive.vercel.app//api/skills';
+    const url = isUpdating ? `${ API_URL }/api/skills/${formData.id}` : `${ API_URL }/api/skills`;
     const method = isUpdating ? 'PUT' : 'POST';
 
     try {
@@ -83,9 +83,9 @@ function SkillManagement() {
     if (!token) return setMessage("Error: You are not logged in.");
 
     try {
-      const response = await fetch(`https://portfolio-backend-two-olive.vercel.app/api/skills/${skillId}`, {
+      const response = await fetch(`${ API_URL }/api/skills/${skillId}`, {
         method: 'DELETE',
-        headers: { 'Authorization': `Afshan ${token}` },e
+        headers: { 'Authorization': `Afshan ${token}` },
       });
 
       const data = await response.json();

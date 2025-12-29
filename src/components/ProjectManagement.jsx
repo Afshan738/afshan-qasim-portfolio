@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
-
+import { API_URL } from '../config';
 function ProjectManagement() {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,7 @@ function ProjectManagement() {
   const fetchProjects = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/projects');
+      const response = await fetch(`${ API_URL }/api/projects`);
       if (!response.ok) throw new Error('Failed to fetch projects');
       const data = await response.json();
       setProjects(data);
@@ -50,8 +50,8 @@ function ProjectManagement() {
     if (!token) return setMessage("Error: You are not logged in.");
     const isUpdating = !!formData.id;
     const url = isUpdating 
-      ? `https://https://portfolio-backend-two-olive.vercel.app/api/projects/${formData.id}` 
-      : 'https://portfolio-backend-two-olive.vercel.app/api/projects';
+      ? `${ API_URL }/api/projects/${formData.id}` 
+      : `${ API_URL }/api/projects`;
     const method = isUpdating ? 'PUT' : 'POST';
 
     try {
@@ -90,7 +90,7 @@ function ProjectManagement() {
     if (!token) return setMessage("Error: You are not logged in.");
 
     try {
-      const response = await fetch(`https://portfolio-backend-two-olive.vercel.app/api/projects/${projectId}`, {
+      const response = await fetch(`${ API_URL }/api/projects/${projectId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Afshan ${token}` },
       });

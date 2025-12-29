@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css'; 
-
+import { API_URL } from '../config';
 function Contact() {
   const [formData, setFormData] = useState({
     senderName: '',
@@ -20,7 +20,7 @@ function Contact() {
     setMessage('');
 
     try {
-      const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/contactmessages', {
+      const response = await fetch(`${ API_URL }/api/contactmessages`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

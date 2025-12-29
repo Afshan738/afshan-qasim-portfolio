@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion'; 
 import './Certificate.css'; 
-
+import { API_URL } from '../config';
 function Certificates() {
   const [certificates, setCertificates] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -10,7 +10,7 @@ function Certificates() {
   useEffect(() => {
     const fetchCertificates = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/certificates');
+        const response = await fetch(`${ API_URL }/api/certificates`);
         if (!response.ok) {
           throw new Error('Certificates data could not be fetched.');
         }

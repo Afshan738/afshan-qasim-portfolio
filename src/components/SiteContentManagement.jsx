@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
-
+import { API_URL } from '../config';
 function SiteContentManagement() {
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,7 @@ function SiteContentManagement() {
     const fetchSiteContent = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/sitecontent');
+        const response = await fetch(`${ API_URL }/api/sitecontent`);
         if (!response.ok) throw new Error('Failed to fetch site content');
         const data = await response.json();
         if (data) {
@@ -48,7 +48,7 @@ function SiteContentManagement() {
     }
 
     try {
-      const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/sitecontent', {
+      const response = await fetch(`${ API_URL }/api/sitecontent`, {
         method: 'PUT', 
         headers: {
           'Content-Type': 'application/json',

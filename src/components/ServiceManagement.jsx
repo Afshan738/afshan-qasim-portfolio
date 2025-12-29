@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
-
+import { API_URL } from '../config';
 function ServiceManagement() {
   const [services, setServices] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +13,7 @@ function ServiceManagement() {
   const fetchServices = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/services');
+      const response = await fetch(`${ API_URL }/api/services`);
       if (!response.ok) throw new Error('Failed to fetch services');
       const data = await response.json();
       setServices(data);
@@ -43,7 +43,7 @@ function ServiceManagement() {
     if (!token) return setMessage("Error: You are not logged in.");
 
     const isUpdating = !!formData.id;
-    const url = isUpdating ? `https://portfolio-backend-two-olive.vercel.app/api/services/${formData.id}` : 'https://portfolio-backend-two-olive.vercel.app//api/services';
+    const url = isUpdating ? `${ API_URL }/api/services/${formData.id}` : `${ API_URL }/api/services`;
     const method = isUpdating ? 'PUT' : 'POST';
 
     try {
@@ -77,7 +77,7 @@ function ServiceManagement() {
     if (!token) return setMessage("Error: You are not logged in.");
 
     try {
-      const response = await fetch(`https://portfolio-backend-two-olive.vercel.app/api/services/${serviceId}`, {
+      const response = await fetch(`${ API_URL }/api/services/${serviceId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Afshan ${token}` }, 
       });

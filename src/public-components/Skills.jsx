@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion'; 
 import './Skills.css';
-
+import { API_URL } from '../config';
 function Skills() {
   const [skills, setSkills] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -10,7 +10,7 @@ function Skills() {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/skills');
+        const response = await fetch(`${ API_URL }/api/skills`);
         if (!response.ok) {
           throw new Error('Skills data could not be fetched.');
         }

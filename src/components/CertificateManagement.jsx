@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_URL } from '../config';
 import '../App.css';
 
 function CertificateManagement() {
@@ -17,7 +18,7 @@ function CertificateManagement() {
   const fetchCertificates = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/certificates');
+      const response = await fetch(`${ API_URL }/api/certificates`);
       if (!response.ok) throw new Error('Failed to fetch certificates');
       const data = await response.json();
       setCertificates(data);
@@ -48,7 +49,7 @@ function CertificateManagement() {
     if (!token) return setMessage("Error: You are not logged in.");
 
     const isUpdating = !!formData.id;
-    const url = isUpdating ? `https://portfolio-backend-two-olive.vercel.app/api/certificates/${formData.id}` : 'https://portfolio-backend-two-olive.vercel.app/api/certificates';
+    const url = isUpdating ? `${ API_URL }/api/certificates/${formData.id}` : `${ API_URL }/api/certificates`;
     const method = isUpdating ? 'PUT' : 'POST';
 
     try {
@@ -86,7 +87,7 @@ function CertificateManagement() {
     if (!token) return setMessage("Error: You are not logged in.");
 
     try {
-      const response = await fetch(`https://portfolio-backend-two-olive.vercel.app/api/certificates/${certificateId}`, {
+      const response = await fetch(`${ API_URL }/api/certificates/${certificateId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Afshan ${token}` },
       });

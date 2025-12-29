@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Service.css'; 
-
+import { API_URL } from '../config';  
 function Services() {
   const [services, setServices] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -8,7 +8,7 @@ function Services() {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-two-olive.vercel.app/api/services');
+        const response = await fetch(`${ API_URL }/api/services`);
         if (!response.ok) {
           throw new Error('Services data could not be fetched.');
         }

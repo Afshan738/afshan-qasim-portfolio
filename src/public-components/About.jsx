@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import "./About.css";
-
+import { API_URL } from '../config';
 const About = () => {
     const [aboutContent, setAboutContent] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
 
 useEffect(() => {
-    fetch("https://portfolio-backend-two-olive.vercel.app/api/sitecontent")
+    fetch(`${ API_URL }/api/sitecontent`)
         .then((response) => response.json())
         .then((data) => {
             if (data) {
